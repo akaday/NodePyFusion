@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
-const port = 3000;
+const port = 3001; // Changed port
 
 // MongoDB connection
 mongoose.connect('mongodb://localhost:27017/nodepyfusion', { useNewUrlParser: true, useUnifiedTopology: true });
