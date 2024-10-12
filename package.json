@@ -1,16 +1,19 @@
 {
   "name": "nodepyfusion",
   "version": "1.0.0",
-  "description": "NodePyFusion is a project that seamlessly integrates Node.js and Python, enabling powerful combined functionalities.",
-  "main": "app.js",
+  "description": "NodePyFusion combines the power of Node.js and Python.",
+  "main": "server.js",
+  "type": "module",  // Add this line
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+
     "express": "^4.21.1",
     "socket.io": "^4.8.0"
+=======
+    "express": "^4.17.1",
+    "socket.io": "^4.0.0"
+
   }
 }
