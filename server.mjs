@@ -1,8 +1,34 @@
-import json
+import express from 'express';
+import { exec } from 'child_process';
+import http from 'http';
+import { Server } from 'socket.io';
 
-def process_data():
-    data = {"message": "Hello from Python with data processing!"}
-    return json.dumps(data)
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server);
+const port = 3000;
 
-if __name__ == "__main__":
-    print(process_data())
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
+
+io.on('connection', (socket) => {
+  console.log('a user connected');
+  setInterval(() => {
+    exec('python script.py', (error, stdout, stderr) => {
+      if (error) {
+        console.error(`Error executing Python script: ${error.message}`);
+        return;
+      }
+      if (stderr) {
+        console.error(`stderr: ${stderr}`);
+        return;
+      }
+      socket.emit('data', stdout);
+    });
+  }, 5000); // Fetch data every 5 seconds
+});
+
+server.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}/`);
+});
