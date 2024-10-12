@@ -2,7 +2,7 @@
   "name": "nodepyfusion",
   "version": "1.0.0",
   "description": "NodePyFusion combines the power of Node.js and Python.",
-  "main": "server.js",
+  "main": "server.mjs",
   "type": "module",  // Add this line
   "scripts": {
     "start": "node server.mjs"
