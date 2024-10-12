@@ -3,17 +3,12 @@
   "version": "1.0.0",
   "description": "NodePyFusion combines the power of Node.js and Python.",
   "main": "server.mjs",
-  "type": "module",  // Add this line
+  "type": "module",
   "scripts": {
-    "start": "node server.mjs"
+    "start": "node server.mjs"  // Ensure this line is present
   },
   "dependencies": {
-
-    "express": "^4.21.1",
-    "socket.io": "^4.8.0"
-=======
     "express": "^4.17.1",
     "socket.io": "^4.0.0"
-
   }
 }
