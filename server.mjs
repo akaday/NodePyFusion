@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import json
 
 def process_data():
@@ -7,7 +7,7 @@ def process_data():
 
 if __name__ == "__main__":
     print(process_data())
-=======
+
 import express from 'express';
 import { exec } from 'child_process';
 import http from 'http';
@@ -42,4 +42,3 @@ io.on('connection', (socket) => {
 server.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
->>>>>>> 3dfd5e325aa5f6619a38eb6955197339158055aa
