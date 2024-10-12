@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NodePyFusion Dashboard</title>
+</head>
+<body>
+  <h1>Real-Time Data</h1>
+  <div id="data"></div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+    socket.on('data', function(data) {
+      document.getElementById('data').innerText = data;
+    });
+  </script>
+</body>
+</html>
